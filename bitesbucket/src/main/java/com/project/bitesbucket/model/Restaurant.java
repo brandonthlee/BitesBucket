@@ -9,19 +9,19 @@ import javax.persistence.Id;
 public class Restaurant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String name;
     private String address;
+    private String description;
+    private double latitude;
+    private double longitude;
+    private double ratings = 0.0;
 
     public Restaurant() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -39,4 +39,29 @@ public class Restaurant {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(double ratings) {
+        this.ratings = ratings;
+    }
+
 }
